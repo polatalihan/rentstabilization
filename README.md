@@ -16,7 +16,7 @@ No file in the package exceeds GitHub's 25 MB browser-upload limit. The largest 
 
 ## Geocoding
 
-`config.js` contains the NYC Geoclient subscription key. A static GitHub Pages site exposes client-side keys, so apply any available origin/domain restrictions or use a serverless proxy before a high-profile public launch.
+`config.js` contains the local address and BBL search subscription key. A static GitHub Pages site exposes client-side keys, so apply any available origin/domain restrictions or use a serverless proxy before a high-profile public launch.
 
 ## Local testing
 
@@ -34,3 +34,8 @@ Then open `http://localhost:8000`.
 - Geoclient authentication is sent as the `subscription-key` query parameter to avoid browser CORS preflight problems.
 - A 401 still means the key is not currently authorized for the **Geoclient V2 User** product; sign in to the NYC API portal, subscribe that product, and use the primary key from that subscription.
 - GitHub must contain the complete nested `tiles` directory. A typical deployed tile should be reachable at a URL such as `tiles/11/603/769.pbf` relative to the site root.
+
+
+## Search
+
+Address and BBL lookup runs entirely in the browser using `lots.json`. No NYC Geoclient API key is required.

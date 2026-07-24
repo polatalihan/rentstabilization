@@ -22,9 +22,10 @@
       <section class="panel search-panel">
         <label for="addressInput">Find an address</label>
         <div class="search-row">
-          <input id="addressInput" type="search" placeholder="Example: 350 Fifth Avenue" autocomplete="street-address" />
+          <input id="addressInput" type="search" placeholder="Address or 10-digit BBL" autocomplete="off" aria-controls="searchResults" aria-autocomplete="list" />
           <button id="searchBtn">Search</button>
         </div>
+        <div id="searchResults" class="search-results" role="listbox" hidden></div>
         <p id="searchStatus" class="status" aria-live="polite"></p>
       </section>
 
