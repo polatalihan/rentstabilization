@@ -27,3 +27,10 @@ python -m http.server 8000
 ```
 
 Then open `http://localhost:8000`.
+
+## Important fixes in this build
+
+- Vector tiles are requested with repository-relative URLs (`./tiles/...`) so the site works both at a GitHub project URL and at a root custom domain.
+- Geoclient authentication is sent as the `subscription-key` query parameter to avoid browser CORS preflight problems.
+- A 401 still means the key is not currently authorized for the **Geoclient V2 User** product; sign in to the NYC API portal, subscribe that product, and use the primary key from that subscription.
+- GitHub must contain the complete nested `tiles` directory. A typical deployed tile should be reachable at a URL such as `tiles/11/603/769.pbf` relative to the site root.
